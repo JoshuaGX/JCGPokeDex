@@ -18,7 +18,7 @@ var pokeDex = [
   height: 1.5,
   type: ['Ghost', 'Poison'],
   }
-   ]
+]
 
 // Information added to the console
 console.log(pokeDex[0],pokeDex[1],pokeDex[2]);
@@ -30,7 +30,7 @@ for (var i = 0; i < pokeDex.length; i++) {
   }
 
 // The rest of the pokemon are listed on the page
-  else {
+    else {
     result = document.write(pokeDex[i].name + " is a " + pokeDex[i].type + " type and is about " + pokeDex[i].height + " tall!<br><br>");
- }
+  }
 }
