@@ -21,8 +21,9 @@ var pokeDex = [
 ]
 
 // Information added to the console
-console.log(pokeDex[0],pokeDex[1],pokeDex[2]);
-
+pokeDex.forEach(function(field, index) {
+  console.log(field);
+});
 // The biggest pokemon will have Wow, That's big next to it
 for (var i = 0; i < pokeDex.length; i++) {
      if (pokeDex[i].height > 1.4) {
