@@ -1,19 +1,19 @@
 // The Array is Created
 var pokeDex = [
 
-// Charmander's information setup as nested object
+// Charmander's information setup as nested object inside of the pokeDex array
   {name: 'Charmander',
   height: 0.6,
   type: ['Fire']
   },
 
-// Poliwrath's information setup as nested object
+// Poliwrath's information setup as nested object inside of the pokeDex array
   {name: 'Poliwrath',
   height: 1.3,
   type: ['Water', 'Fighting'],
    },
 
-// Gengar's information setup as nested object
+// Gengar's information setup as nested object inside of the pokeDex array
   {name: 'Gengar',
   height: 1.5,
   type: ['Ghost', 'Poison'],
