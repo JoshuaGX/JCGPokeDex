@@ -1,4 +1,4 @@
-// The Array is Created
+// The pokeDex Array is Created
 var pokeDex = [
 
 // Charmander's information setup as nested object inside of the pokeDex array
