@@ -1,25 +1,36 @@
-// The pokeDex Array is Created
-var pokeDex = [
+var pokemonRepository = (function()) {
+  var repository = [
+    {name: 'Charmander',
+    height: 0.6,
+    type: ['Fire']
+     },
+    {name: 'Poliwrath',
+    height: 1.3,
+    type: ['Water', 'Fighting'],
+     },
+    {name: 'Gengar',
+    height: 1.5,
+    type: ['Ghost', 'Poison'],
+     }
+  ]
 
-// Charmander's information setup as nested object inside of the pokeDex array
-  {name: 'Charmander',
-  height: 0.6,
-  type: ['Fire']
-  },
-
-// Poliwrath's information setup as nested object inside of the pokeDex array
-  {name: 'Poliwrath',
-  height: 1.3,
-  type: ['Water', 'Fighting'],
-   },
-
-// Gengar's information setup as nested object inside of the pokeDex array
-  {name: 'Gengar',
-  height: 1.5,
-  type: ['Ghost', 'Poison'],
+  function getAll() {
+    return repository;
   }
-]
 
+  function add(pokemon) {
+    if (typeof(pokemon) === 'object') {
+      repository.push(pokemon);
+    } else {
+      console.log('Please add an object');
+    }
+  }
+
+  return {
+    getAll: getAll,
+    add: add
+  };
+})();
 // Information added to the console
 pokeDex.forEach(function(field, index) {
   console.log(field);
