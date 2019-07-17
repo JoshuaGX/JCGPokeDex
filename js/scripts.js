@@ -1,5 +1,5 @@
 var pokemonRepository = (function()) {
-  var repository = [
+  var pokeDex = [
     {name: 'Charmander',
     height: 0.6,
     type: ['Fire']
@@ -15,12 +15,12 @@ var pokemonRepository = (function()) {
   ]
 
   function getAll() {
-    return repository;
+    return pokeDex;
   }
 
   function add(pokemon) {
     if (typeof(pokemon) === 'object') {
-      repository.push(pokemon);
+      pokeDex.push(pokemon);
     } else {
       console.log('Please add an object');
     }
@@ -31,10 +31,12 @@ var pokemonRepository = (function()) {
     add: add
   };
 })();
+
 // Information added to the console
 pokeDex.forEach(function(field, index) {
   console.log(field);
 });
+
 // The biggest pokemon will have Wow, That's big next to it
 for (var i = 0; i < pokeDex.length; i++) {
      if (pokeDex[i].height > 1.4) {
