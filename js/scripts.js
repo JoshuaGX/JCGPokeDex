@@ -76,6 +76,16 @@ function printPokemonDescription(singlePokemon) {
   }
 }
 
+var $pokemonList = document.querySelector('.pokemon-list');
+
 allPokemon.forEach(function(pokemon) {
-  document.write(printPokemonDescription(pokemon) + '<br>');
+  //document.write(printPokemonDescription(pokemon) + '<br>');
+var $newListItem = document.createElement('li');
+var $newButton = document.createElement('button');
+
+$newButton.innerText = pokemonObject.name;
+$newListItem.setAttribute('class', 'pokemon-list__item');
+$newButton.setAttribute('class', 'list-item__button');
+$newListItem.appendChild($newButton);
+$pokeList.appendChild($newListItem);
 });
