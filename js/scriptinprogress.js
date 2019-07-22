@@ -55,7 +55,7 @@ var pokemonRepository = (function() {
     			return response.json();
     		}).then(function (details) {
     			item.imageUrl = details.sprites.front_default;
-    			item.heigth = details.height;
+    			item.height = details.height;
     			item.types = Object.keys(details.types);
     	}).catch(function (e) {
     		console.error(e);
@@ -112,11 +112,11 @@ var pokemonRepository = (function() {
       }
 
       //HTML items with the id #show-modal have their modalTitle and modalText changed to 'Modal title', 'This is the modal content!'.
-        document.querySelector('#show-modal').addEventListener('click', () => {
-        showModal(pokemonObject);
+  /*      document.querySelector('#show-modal').addEventListener('click', () => {
+        showModal(pokemon);
       });
 
-
+*/
       //Removes is-visible class from #modal-container id
       function hideModal() {
         var $modalContainer = document.querySelector('#modal-container');
