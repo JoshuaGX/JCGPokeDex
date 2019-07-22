@@ -62,6 +62,75 @@ var pokemonRepository = (function() {
     	});
     	}
 
+/* MODAL BEGINNING*/
+
+      var $modalContainer = document.querySelector('#modal-container');
+
+      function showModal(modalTitle, modalText) {
+        var $modalContainer = document.querySelector('#modal-container');
+
+      //Clearing all contents of $modal-container
+        $modalContainer.innerHTML = '';
+
+      //Creating <div class='modal'></div>
+        var modal = document.createElement('div');
+        modal.classList.add('modal');
+
+      //Creating <button class='modal-close'>Close</button>
+        var closeButtonElement = document.createElement('button');
+        closeButtonElement.classList.add('modal-close');
+        closeButtonElement.innerText = 'Close';
+
+      //Event listening for the 'Close' button to be clicked and will execute hideModal function
+        closeButtonElement.addEventListener('click', hideModal);
+
+      //Creating <h1>modalTitle</h1>
+        var titleElement = document.createElement('h1');
+        titleElement.innerText = modalTitle;
+
+      //Creating <p>modalText</p>
+        var contentElement = document.createElement('p');
+        contentElement.innerText = modalText;
+
+      //Appending Close-Button, Title-Element, Content-Element, and ModalContainer
+        modal.appendChild(closeButtonElement);
+        modal.appendChild(titleElement);
+        modal.appendChild(contentElement);
+        $modalContainer.appendChild(modal);
+
+      //#modal-ontainer id has the class 'is-visible' added
+        $modalContainer.classList.add('is-visible');
+      }
+
+      //HTML items with the id #show-modal have their modalTitle and modalText changed to 'Modal title', 'This is the modal content!'.
+        document.querySelector('#show-modal').addEventListener('click', () => {
+        showModal('Modal title', 'This is the modal content!');
+      });
+
+      //Removes is-visible class from #modal-container id
+        function hideModal() {
+        var $modalContainer = document.querySelector('#modal-container');
+        $modalContainer.classList.remove('is-visible');
+      }
+
+      //Escape button will execute hideModal
+        window.addEventListener('keydown', (e) => {
+        var $modalContainer = document.querySelector('#modal-container');
+        if (e.key === 'Escape' && $modalContainer.classList.contains('is-visible')) {
+          hideModal();
+        }
+      });
+
+      //Clicking outside the modal executes hideModal
+        $modalContainer.addEventListener('click', (e) => {
+        var target = e.target;
+        if (target === $modalContainer) {
+          hideModal();
+        }
+      });
+
+/* MODAL END*/
+
   return {
     getAll: getAll,
     add: add,
