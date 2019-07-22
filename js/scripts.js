@@ -158,35 +158,6 @@ function isTrueEqualKeysObj (obj1, obj2) {
 
 var allPokemon = pokemonRepository.getAll();
 
-function getHeightDescription(singlePokemon) {
-  return singlePokemon.height + 'm';
-}
-
-function getHeightSpecial(singlePokemon) {
-  if (singlePokemon.height >= 1.4) {
-    return 'Look how big it is!';
-  } else if (singlePokemon.height <= 0.9) {
-    return "It's so cute!";
-  } else {
-    return null;
-  }
-}
-
-function getType(singlePokemon) {
-  return singlePokemon.type;
-}
-
-function getDescription(singlePokemon) {
-  return singlePokemon.name + ' (' + getHeightDescription(singlePokemon) + ', ' + getType(singlePokemon) + ")";
-}
-
-function printPokemonDescription(singlePokemon) {
-  if (getHeightSpecial(singlePokemon)) {
-    return getDescription(singlePokemon) + ' - ' + getHeightSpecial(singlePokemon);
-  } else {
-    return getDescription(singlePokemon);
-  }
-}
 pokemonRepository.loadList().then(function() {
 allPokemon.forEach(function(pokemonObject) {
   pokemonRepository.addListItem(pokemonObject);
