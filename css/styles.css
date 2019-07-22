@@ -9,4 +9,21 @@
     border-radius: 3px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.3);
     transition: 0.2s opacity;
-  }
+}
+
+#modal-container {
+  display: none;
+}
+
+#modal-container.is-visible {
+  border: none;
+  display: inline-block;
+  font-family: inherit;
+  background-color: #7D35AC;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition: 0.2s opacity;
+}
