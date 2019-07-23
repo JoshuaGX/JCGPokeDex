@@ -141,7 +141,10 @@ var pokemonRepository = (function() {
 
 /* MODAL END*/
 
-
+function showDetails(pokemonObject) {
+    pokemonRepository.loadDetails(pokemonObject).then(function () {
+  pokemonRepository.showModal(pokemonObject);   });
+}
 
 
   return {
@@ -170,8 +173,3 @@ allPokemon.forEach(function(pokemonObject) {
   pokemonRepository.addListItem(pokemonObject);
 });
 });
-
-function showDetails(pokemonObject) {
-    pokemonRepository.loadDetails(pokemonObject).then(function () {
-  pokemonRepository.showModal(pokemonObject);   });
-}
