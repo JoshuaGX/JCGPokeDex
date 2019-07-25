@@ -157,15 +157,14 @@ function showDetails(pokemonObject) {
     hideModal: hideModal
   };
 })();
-
-function isTrueEqualKeysObj (obj1, obj2) {
+/* {
   if (Object.keys(obj1).length === Object.keys(obj2).length)
     var i = 0
     while (i < Object.keys(obj1).length && (Object.keys(obj1)[i] === Object.keys(obj2)[i])) {
       i++;
     }
 }
-
+*/
 var allPokemon = pokemonRepository.getAll();
 
 pokemonRepository.loadList().then(function() {
